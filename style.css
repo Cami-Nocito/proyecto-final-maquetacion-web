@@ -1,0 +1,294 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*Esto mantiene el ancho a pesar del padding y border*/
+    font-family: 'Inconsolata', monospace;
+    list-style: none;
+    text-decoration: none;
+    color: white
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    position: fixed;
+    /*Esto hace que el header se quede fijo en la parte superior de la pantalla*/
+    right: 0;
+    top: 0;
+    z-index: 100;
+    /*Esto hace que el header se quede por encima de los demás elementos*/
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+/* Ocultar el input checkbox */
+.menu-checkbox {
+    display: none;
+}
+
+/* Estilo del botón hamburguesa (las 3 líneas) */
+.hamburger-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    margin-left: 60px;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s ease;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #b3319f 0%, #804478 25%, #3b1327 75%);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*Se declaran las dos columnas de la grilla*/
+    align-items: center;
+    gap: 2rem;
+}
+
+section {
+    padding: 0 8%;
+}
+
+.hero-text h1 {
+    font-family: 'Roboto', monospace;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+
+.hero-text h5 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 40px;
+}
+
+.hero-img img {
+    width: 400px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all .5s linear;
+    border-radius: 300px;
+
+}
+
+.hero-img img:hover {
+    width: 450px;
+    opacity: 0.6;
+}
+
+.hero-text a {
+    display: inline-block;
+    background-color: rgb(153, 130, 134);
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text a.learn {
+    margin-left: 10px;
+}
+
+.hero-text a.contact {
+    margin-left: 10px;
+}
+
+.icons {
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons svg {
+    display: block;
+    margin: 26px 0;
+}
+
+.icons a svg {
+    transition: all 0.3s ease;
+}
+
+.icons a:hover .bi-instagram {
+    color: #E1306C;
+    transform: translateY(-5px);
+}
+
+.icons a:hover .bi-whatsapp {
+    color: #25D366;
+    transform: translateY(-5px);
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6px;
+    right: 3%;
+}
+
+.scroll-down svg{
+    display: block;
+    padding: 12px;
+    border-radius: 50%;
+    transition: all .5s ease;
+}
+
+.scroll-down a:hover .bi-arrow-down-square-fill{
+    background-color: rgb(59, 13, 38);
+    transform: translateY(-5px);
+}
+
+    /*RESPONSIVE*/
+
+@media (max-width:992px) {
+    section{
+        padding: 0 3%;
+        transition: .2s ;
+    }
+
+    .hero-text{
+        padding-top: 0 ;
+    }
+
+    .hero-text a{
+        margin: 3px;
+        }
+
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+.hero-text p{
+    font-size: 70%;
+}
+
+    .icons{
+        display: none;
+    }
+
+    .scroll-down{
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    .hamburger-icon {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .hamburger-icon span {
+        width: 25px;
+        height: 3px;
+        background-color: rgb(252, 249, 249);
+        border-radius: 3px;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img{
+        margin: 0;
+    }
+
+    .hero{
+        height: 100%;
+        gap:1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #af1a83f1;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .5s ease;
+    }
+
+    .navlist a{
+        display: block;
+        margin: 7px 0;
+    }
+
+    .menu-checkbox:checked + label.hamburger-icon + ul{
+        right: 0;
+    }
+}
+
